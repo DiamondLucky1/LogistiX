@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class="header">
+  <h1 align="center">Товар на складе</h1>
+  <a href="{% url 'logout' %}"><button class="button-vhod">Выйти</button></a>
+
+  <!-- кнопка "Добавить товар" -->
+<div class="button">
+    <a href="#" id="open_pop">Добавить товар</a>
+</div>
+
+<div class="pop_up">
+    <div class="pop_up_container">
+        <div class="pop_up_body"></div>
+            <p></p>
+        <form action="">
+            <input type="text" placeholder="Наименование">
+            <input type="text" placeholder="Категория">
+            <button>Добавить товар</button>
+        </form>
+        <div class="pop_up_close">&#10006</div>
+    </div>
+</div>
+<!-- кнопка "Добавить локацию" -->
+<button id="addLocationButton">Добавить локацию</button>
+
+</div>
+
+<table class="highlighted" cellpadding="20%" border="5px" align="center" width="70%">
+  <thead>
+    <tr >
+      <th colspan="2">Фильтры:</th>
+      <th >
+        <form action="#" method="get">
+        <input type="text" name="search_query" placeholder="Введите название товара"></th>
+
+        <th><select name="category">
+        <option value="">Выберите категорию</option>
+         {% for category in categories %}
+        <option value="{{ category.id }}">{{ category.category_name }}</option>
+        {% endfor %}
+        </select> </th>
+
+
+
+    <th><select name="manufacturer">
+    <option value="">Выберите склад</option>
+    {% for warehouse in warehouses %}
+        <option value="{{ warehouse.id }}">{{ warehouse.name }}</option>
+    {% endfor %} </select></th>
+
+        <th><button type="submit">Поиск</button></th>
+    <th colspan="2"><a href="{% url 'main' %}">Сбросить фильтры</a></th>
+
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr class="bold-td">
+
+      <td>Название</td></b>
+      <td>Фото</td>
+      <td>Характеристики</td>
+      <td>Цена</td>
+      <td>Категория</td>
+      <td>Количество</td>
+      <td>Склад</td>
+
+    </tr>
+
+    {% for p in products %}
+    <tr>
+
+      <td>{{ p.name }}</td>
+      <td><img width="50px" height="50px" src="{{ p.photo.url }}" alt=""></td>
+      <td>{{ p.characteristic|slice:":20" }}</td>
+      <td>{{ p.price }}</td>
+      <td>{{ p.category }}</td>
+      <td>{{ p.quantity }}</td>
+      <td>{{ p.warehouse }}</td>
+
+
+    </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static }
+
+
+ {% block content %}
+<h1 >Столы и стулья</h1>
+<div align="center">
+    <h2 class="heading">Вход на склад</h2>
+<form method="post" class="login-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p><button class="button-vhod" type="submit">Войти</button></p>
+</form>
+</div>
+<!--{% for product in products %}-->
+<!--    <ul>-->
+<!--        <li>-->
+<!--            {{ product }}-->
+<!--            <img width="100px" height="100px" src="{{ product.photo.url }}" alt="">-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--{% endfor %}-->
+
+
+{% endblock %}

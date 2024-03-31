@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import *
+
+
+admin.site.register(Warehouse)
+admin.site.register(Category)
+admin.site.register(InventoryItem)
+admin.site.register(Production)
+admin.site.register(StockMovement)
+
+

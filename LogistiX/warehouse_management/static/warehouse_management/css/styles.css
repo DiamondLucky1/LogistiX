@@ -1,0 +1,86 @@
+    body {
+        background-image: url('../images/main.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-color: #464646;
+        margin: 0;
+      }
+
+/*фиксированную ширину для полей*/
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+        width: 200px; /* желаемая ширина */
+    }
+    .login-form label {
+        width: 100px; /* ширина лейблов */
+        display: inline-block;
+    }
+
+    .heading {
+        color: green;
+    }
+
+
+     .highlighted {
+    background-color: #ffff99; /* желтый цвет фона */
+    }
+
+  tr.bold-td > td {
+    font-weight: bold;
+  }
+
+
+/*
+.popup_close {}
+.popup_title {}
+.popup_text {}
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.button {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.button a {
+    font-family: Montserrat;
+    background-color: orange;
+    padding: 20px 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+}
+
+.pop_up {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(79, 70, 70, 0.5);
+    z-index: 2;
+}
+
+.pop_up_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.popup_body {
+    margin: auto;
+    width: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 15px 110px 15px;
+    position: relative;
+}

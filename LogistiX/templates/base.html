@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{{title}}{% endblock %}</title>
+    <!-- CSS, метатеги и другие общие настройки -->
+
+
+    <link type="text/css" href="{% static 'warehouse_management/css/styles.css' %}" rel="stylesheet" />
+
+
+</head>
+<body>
+    <header>
+        <!-- Область для хедера -->
+        {% block header %}{% endblock %}
+    </header>
+
+
+    <nav>
+        <!-- Область для навигации -->
+        {% block nav %}{% endblock %}
+    </nav>
+
+    <main>
+        <!-- Область для контента -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <!-- Область для подвала -->
+        {% block footer %}{% endblock %}
+    </footer>
+
+<script src="{% static 'warehouse_management/js/script.js' %}"></script>
+</body>
+</html>
